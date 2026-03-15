@@ -1,4 +1,4 @@
-package com.youngcoder.healthcare;
+package com.youngcoder.healthcare.enitity;
 
 import jakarta.persistence.*;
 

@@ -1,5 +1,6 @@
-package com.youngcoder.healthcare;
+package com.youngcoder.healthcare.demo;
 
+import com.youngcoder.healthcare.enitity.Patient;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;

@@ -1,16 +1,16 @@
-package com.youngcoder.healthcare;
+package com.youngcoder.healthcare.demo;
 
+import com.youngcoder.healthcare.repository.PatientRepository;
+import com.youngcoder.healthcare.enitity.Patient;
 import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-import java.util.List;
 
 
-public class PatientRepositoryCrud implements CommandLineRunner {
+public class PatientRepositoryCrudDemo implements CommandLineRunner {
 
     private PatientRepository patientRepository;
 
-    public PatientRepositoryCrud (PatientRepository patientRepository) {
+    public PatientRepositoryCrudDemo(PatientRepository patientRepository) {
         this.patientRepository=patientRepository;
     }
 

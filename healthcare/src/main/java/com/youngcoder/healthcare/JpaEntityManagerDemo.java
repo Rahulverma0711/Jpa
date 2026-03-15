@@ -41,10 +41,23 @@ public class JpaEntityManagerDemo implements CommandLineRunner {
 
         // remove
 
-        Patient p3= new Patient("Kali",43);
-        entityManager.persist(p3);
+       // Patient p3= new Patient("Kali",43);
+       // entityManager.persist(p3);
 
-        entityManager.remove(p3);
+        //entityManager.remove(p3);
+
+        // flush()-It sends SQL statements to the database without committing the transaction.
+
+        Patient p4 = new Patient("Rina",33);
+        p4.setName("Rina updated");
+        entityManager.flush();
+        p4.setAge(33);
+
+
+        // clear() removes all managed entities from the persistence context.
+
+        entityManager.clear();
+
 
 
 

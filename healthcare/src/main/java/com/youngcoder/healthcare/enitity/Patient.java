@@ -13,8 +13,19 @@ public class Patient {
     private String name;
     @Column(name="patient_age")
     private int age;
+    @OneToOne
+    @JoinColumn(name="patient_medicalrecord")
+    private MedicalRecord medicalRecord;
 
     public Patient() {
+    }
+
+    public MedicalRecord getMedicalRecord() {
+        return medicalRecord;
+    }
+
+    public void setMedicalRecord(MedicalRecord medicalRecord) {
+        this.medicalRecord = medicalRecord;
     }
 
     public Patient(String name, int age) {

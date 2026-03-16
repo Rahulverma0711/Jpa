@@ -7,7 +7,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class JpaEntityManagerDemo implements CommandLineRunner {
     @PersistenceContext
     EntityManager entityManager;

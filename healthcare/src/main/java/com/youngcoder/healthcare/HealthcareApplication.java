@@ -10,6 +10,8 @@ public class HealthcareApplication {
 		SpringApplication.run(HealthcareApplication.class, args);
 
 		//some changes are made
+
+		// changes from new branch
 	}
 
 }

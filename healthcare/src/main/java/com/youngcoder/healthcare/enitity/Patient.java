@@ -2,6 +2,8 @@ package com.youngcoder.healthcare.enitity;
 
 import jakarta.persistence.*;
 
+import javax.print.Doc;
+
 
 @Entity
 public class Patient {
@@ -16,6 +18,10 @@ public class Patient {
     @OneToOne
     @JoinColumn(name="patient_medicalrecord")
     private MedicalRecord medicalRecord;
+
+    @ManyToOne
+    @JoinColumn(name="doctor_id")
+    private Doctor doctor;
 
     public Patient() {
     }
@@ -47,5 +53,13 @@ public class Patient {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 }

@@ -10,7 +10,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class RelationshipDemo implements CommandLineRunner {
     private MedicalRecordRepository medicalRecordRepository;
     private PatientRepository patientRepository;
@@ -24,19 +24,21 @@ public class RelationshipDemo implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
 
-        Patient p1 = new Patient("Ravi",35);
 
-        MedicalRecord medicalRecord = new MedicalRecord("Fever");
+       MedicalRecord m1 = new MedicalRecord("fever");
+       medicalRecordRepository.save(m1);
+       Patient p1 = new Patient("Ravi",35);
+       p1.setMedicalRecord(m1);
+       patientRepository.save(p1);
+       m1.setPatient(p1);
 
-        p1.setMedicalRecord(medicalRecord);
-        medicalRecord.setPatient(p1);
-        patientRepository.save(p1);
 
-        medicalRecordRepository.save(medicalRecord);
+       System.out.println(p1.getMedicalRecord().getDiagnosis());
 
-        System.out.println(p1.getMedicalRecord().getDiagnosis());
+       MedicalRecord fetchedMedicalRecord = medicalRecordRepository.findById(1L).orElseThrow();
 
-        System.out.println(medicalRecord.getPatient().getName());
+       System.out.println(fetchedMedicalRecord.getPatient().getName());
+
 
 
     }

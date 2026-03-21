@@ -8,6 +8,10 @@ public class HealthcareApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HealthcareApplication.class, args);
+
+		//some changes are made
+
+		// changes from new branch
 	}
 
 }

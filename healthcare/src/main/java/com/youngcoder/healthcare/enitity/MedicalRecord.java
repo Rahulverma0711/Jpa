@@ -8,6 +8,7 @@ public class MedicalRecord {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String diagnosis;
+
     @OneToOne(mappedBy = "medicalRecord")
     private Patient patient;
 

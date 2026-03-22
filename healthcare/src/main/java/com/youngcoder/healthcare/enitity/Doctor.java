@@ -10,7 +10,7 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "doctor")
+    @OneToMany(mappedBy = "doctor" , cascade = CascadeType.ALL)
     private List<Patient> patientList;
 
     public Doctor() {

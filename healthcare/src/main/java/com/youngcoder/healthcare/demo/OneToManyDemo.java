@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import javax.print.Doc;
 import java.util.List;
 
-@Component
+
 public class OneToManyDemo implements CommandLineRunner {
 
     private DoctorRepository doctorRepository;
